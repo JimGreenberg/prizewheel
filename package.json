@@ -1,0 +1,25 @@
+{
+  "name": "prizewheel",
+  "version": "1.0.0",
+  "description": "a prize wheel for the boys",
+  "type": "commonjs",
+  "module": "./src/app.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "bs": "npm run build && npm run start"
+  },
+  "author": "jim",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "dotenv": "^16.3.1",
+    "gifencoder": "^2.0.1"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsc-watch": "^6.0.4",
+    "typescript": "^5.3.3"
+  }
+}
+
