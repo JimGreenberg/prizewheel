@@ -9,6 +9,9 @@
     "start": "node dist/app.js",
     "bs": "npm run build && npm run start"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "author": "jim",
   "license": "ISC",
   "dependencies": {

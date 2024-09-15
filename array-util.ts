@@ -1,3 +1,10 @@
+declare global {
+  interface Array<T> {
+    sample: () => T;
+    shuffle: () => Array<T>;
+  }
+}
+
 Array.prototype.sample = function () {
   return this[Math.floor(Math.random() * this.length)];
 };
@@ -21,3 +28,5 @@ Array.prototype.shuffle = function () {
 
   return this;
 };
+
+export {}

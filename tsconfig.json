@@ -3,9 +3,9 @@
     "module": "CommonJS",
     "target": "es5",
     "lib": [
-            "dom",
-            "dom.iterable",
-            "esnext"
+      "dom",
+      "dom.iterable",
+      "esnext"
     ],
     "noImplicitAny": true,
     "removeComments": true,
@@ -17,6 +17,12 @@
     "moduleResolution": "node",
     "outDir": "dist",
   },
-  "include": ["src/**/*"],
-  "exclude": ["dist", "node_modules"]
+  // "include": ["src/**/*"],
+  "include": [
+    "."
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ]
 }
