@@ -11,8 +11,7 @@ import GIFEncoder from "gifencoder"
 const BOT_TEST = "C03LZF604RG";
 
 const main = (app: App) => {
-  console.log("app main")
-  app.command("/pw", async (args) => {
+  app.command("/spin", async (args) => {
     await args.ack();
     const channel_id = args.body.channel_id;
     const { members } = await app.client.conversations.members({
@@ -36,17 +35,9 @@ const main = (app: App) => {
         {'type': 'mrkdwn', text: `${user.name} is spinning the prize wheel!`}
       ]}
     ]})
-    // console.log("received test command")
     const now = Date.now();
     console.log(now);
-    // await args.say({
-    //   text: `${now}`
-    // })
-    // return;
-    // await args.respond({
-    //   response_type: "ephemeral",
-    //   text: "Working..."
-    // })
+
     const filename = `pw${now}.gif`
 
     const width = 520;
@@ -61,36 +52,6 @@ const main = (app: App) => {
       channel_id
     })
     rs.destroy();
-    // console.log(files[0].files[0]);
-    // const response = await app.client.files.completeUploadExternal({
-    //   files: [{id: files[0].files[0].id}],
-    //   channel_id: args.body.channel_id
-    // });
-    // console.log(response)
-    // await args.say({text: "winnerText"})
-    // const r1 = await app.client.files.getUploadURLExternal({
-    //   filename,
-    //   length: rs.readableLength
-    // })
-    // const r2 = await fetch
-    // console.log(winnerText);
-    // const blocks = [
-    //     {
-    //       type: "image",
-    //       // slack_file: {id: "F07ML3ZDBKN"},
-    //       // @ts-ignore
-    //       // slack_file: {id: files[0].files[0].id},
-    //       slack_file: {url: files[0].files[0].permalink_public},
-    //       alt_text: "prize wheel"
-    //     }
-    //   ]
-    //   console.log(blocks)
-
-    // await args.say({
-    //   text: '',
-    //   blocks,
-    // })
-
 
     console.log(`starting timeout: ${Date.now() - now}`)
     setTimeout(() => {
