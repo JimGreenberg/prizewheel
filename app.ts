@@ -53,18 +53,18 @@ const main = (app: App) => {
     })
     rs.destroy();
 
-    console.log(`starting timeout: ${Date.now() - now}`)
-    setTimeout(() => {
-      args.say({text: `${user.name} spun ${winnerText}!`, blocks: [
-      {'type':"context",
-      elements: [
-        {'type': 'image', image_url: user.image, alt_text: user.name},
-        {type: 'mrkdwn', text:`${user.name} spun ${winnerText}!`}
-      ]},
-    ]})
-    console.log(`timeout callback: ${Date.now() - now}`)
-    }, duration * 3)
-    console.log(`after timeout: ${Date.now() - now}`)
+    // console.log(`starting timeout: ${Date.now() - now}`)
+    // setTimeout(() => {
+    //   args.say({text: `${user.name} spun ${winnerText}!`, blocks: [
+    //   {'type':"context",
+    //   elements: [
+    //     {'type': 'image', image_url: user.image, alt_text: user.name},
+    //     {type: 'mrkdwn', text:`${user.name} spun ${winnerText}!`}
+    //   ]},
+    // ]})
+    // console.log(`timeout callback: ${Date.now() - now}`)
+    // }, 7000)
+    // console.log(`after timeout: ${Date.now() - now}`)
   })
 };
 
