@@ -76,15 +76,10 @@ const newApp = () =>
     socketMode: true,
   });
 
-const runtime = () => {
-  const _app = newApp();
-  _app.start();
-  main(_app);
-  // @ts-ignore
-  _app.error((...args) => {
-    console.error(args);
-    runtime();
-  });
-};
-
-runtime();
+const _app = newApp();
+_app.start();
+main(_app);
+_app.error((e) => {
+  console.error(e);
+  throw e;
+});
